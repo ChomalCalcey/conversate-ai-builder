@@ -1,11 +1,12 @@
-
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Bot, Search, Filter, Plus, Eye, Edit, Trash2, Copy, MoreVertical } from 'lucide-react';
 
 export const ChatbotList = () => {
+  const navigate = useNavigate();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -90,6 +91,18 @@ export const ChatbotList = () => {
     }
   };
 
+  const handleViewChatbot = (chatbotId: number) => {
+    navigate(`/dashboard/chatbots/${chatbotId}/view`);
+  };
+
+  const handleEditChatbot = (chatbotId: number) => {
+    navigate(`/dashboard/chatbots/${chatbotId}/edit`);
+  };
+
+  const handleCreateChatbot = () => {
+    navigate('/dashboard/create');
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -98,7 +111,10 @@ export const ChatbotList = () => {
           <h1 className="text-3xl font-bold text-gray-900">My Chatbots</h1>
           <p className="text-gray-600 mt-1">Manage and monitor your AI chatbots</p>
         </div>
-        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+        <Button 
+          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+          onClick={handleCreateChatbot}
+        >
           <Plus className="w-4 h-4 mr-2" />
           Create New Chatbot
         </Button>
@@ -183,11 +199,21 @@ export const ChatbotList = () => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => handleViewChatbot(chatbot.id)}
+                  >
                     <Eye className="w-4 h-4 mr-1" />
                     View
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => handleEditChatbot(chatbot.id)}
+                  >
                     <Edit className="w-4 h-4 mr-1" />
                     Edit
                   </Button>
@@ -250,10 +276,18 @@ export const ChatbotList = () => {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <div className="flex items-center space-x-2">
-                          <Button variant="ghost" size="sm">
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            onClick={() => handleViewChatbot(chatbot.id)}
+                          >
                             <Eye className="w-4 h-4" />
                           </Button>
-                          <Button variant="ghost" size="sm">
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            onClick={() => handleEditChatbot(chatbot.id)}
+                          >
                             <Edit className="w-4 h-4" />
                           </Button>
                           <Button variant="ghost" size="sm">
