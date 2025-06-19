@@ -1,84 +1,60 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bot, MessageSquare, TrendingUp, Users, Plus, Eye, Edit, Trash2 } from 'lucide-react';
-
 export const DashboardOverview = () => {
-  const stats = [
-    {
-      title: 'Total Chatbots',
-      value: '12',
-      change: '+2 this week',
-      icon: Bot,
-      color: 'from-blue-600 to-blue-700'
-    },
-    {
-      title: 'Total Conversations',
-      value: '1,847',
-      change: '+18% this month',
-      icon: MessageSquare,
-      color: 'from-green-600 to-green-700'
-    },
-    {
-      title: 'Active Users',
-      value: '432',
-      change: '+12% this month',
-      icon: Users,
-      color: 'from-purple-600 to-purple-700'
-    },
-    {
-      title: 'Response Rate',
-      value: '98.2%',
-      change: '+0.5% this week',
-      icon: TrendingUp,
-      color: 'from-orange-600 to-orange-700'
-    }
-  ];
-
-  const recentChatbots = [
-    {
-      id: 1,
-      name: 'Customer Support Bot',
-      status: 'Active',
-      conversations: 245,
-      lastUpdated: '2 hours ago'
-    },
-    {
-      id: 2,
-      name: 'FAQ Assistant',
-      status: 'Active',
-      conversations: 189,
-      lastUpdated: '1 day ago'
-    },
-    {
-      id: 3,
-      name: 'Product Guide Bot',
-      status: 'Draft',
-      conversations: 67,
-      lastUpdated: '3 days ago'
-    }
-  ];
-
-  return (
-    <div className="space-y-6">
+  const stats = [{
+    title: 'Total Chatbots',
+    value: '12',
+    change: '+2 this week',
+    icon: Bot,
+    color: 'from-blue-600 to-blue-700'
+  }, {
+    title: 'Total Conversations',
+    value: '1,847',
+    change: '+18% this month',
+    icon: MessageSquare,
+    color: 'from-green-600 to-green-700'
+  }, {
+    title: 'Active Users',
+    value: '432',
+    change: '+12% this month',
+    icon: Users,
+    color: 'from-purple-600 to-purple-700'
+  }, {
+    title: 'Response Rate',
+    value: '98.2%',
+    change: '+0.5% this week',
+    icon: TrendingUp,
+    color: 'from-orange-600 to-orange-700'
+  }];
+  const recentChatbots = [{
+    id: 1,
+    name: 'Customer Support Bot',
+    status: 'Active',
+    conversations: 245,
+    lastUpdated: '2 hours ago'
+  }, {
+    id: 2,
+    name: 'FAQ Assistant',
+    status: 'Active',
+    conversations: 189,
+    lastUpdated: '1 day ago'
+  }, {
+    id: 3,
+    name: 'Product Guide Bot',
+    status: 'Draft',
+    conversations: 67,
+    lastUpdated: '3 days ago'
+  }];
+  return <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
-        <h2 className="text-3xl font-bold mb-2">Welcome back, John! 👋</h2>
-        <p className="text-blue-100 mb-6">
-          Your chatbots have handled 847 conversations this week. Great work!
-        </p>
-        <Button className="bg-white text-blue-600 hover:bg-blue-50">
-          <Plus className="w-4 h-4 mr-2" />
-          Create New Chatbot
-        </Button>
-      </div>
+      
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <Card key={index} className="relative overflow-hidden">
+        const Icon = stat.icon;
+        return <Card key={index} className="relative overflow-hidden">
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-sm font-medium text-gray-600">
@@ -95,9 +71,8 @@ export const DashboardOverview = () => {
                 </div>
                 <p className="text-sm text-green-600">{stat.change}</p>
               </CardContent>
-            </Card>
-          );
-        })}
+            </Card>;
+      })}
       </div>
 
       {/* Recent Chatbots */}
@@ -112,8 +87,7 @@ export const DashboardOverview = () => {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {recentChatbots.map((chatbot) => (
-              <div key={chatbot.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+            {recentChatbots.map(chatbot => <div key={chatbot.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                     <Bot className="w-6 h-6 text-white" />
@@ -121,11 +95,7 @@ export const DashboardOverview = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">{chatbot.name}</h3>
                     <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                        chatbot.status === 'Active' 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-yellow-100 text-yellow-800'
-                      }`}>
+                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${chatbot.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
                         {chatbot.status}
                       </span>
                       <span>{chatbot.conversations} conversations</span>
@@ -144,11 +114,9 @@ export const DashboardOverview = () => {
                     <Trash2 className="w-4 h-4" />
                   </Button>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>;
 };
