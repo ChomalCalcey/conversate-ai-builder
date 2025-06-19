@@ -25,7 +25,7 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
           {/* Profile Dropdown */}
           <div className="relative">
             <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] rounded-full flex items-center justify-center">
                 <User className="w-4 h-4 text-white" />
               </div>
               <span className="font-medium">John Doe</span>

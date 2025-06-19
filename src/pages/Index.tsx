@@ -34,10 +34,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] rounded-lg flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] bg-clip-text text-transparent">
                 ChatBot Creator
               </span>
             </div>
@@ -49,7 +49,7 @@ const Index = () => {
                   </Button>
                 </>
               ) : (
-                <Button onClick={() => navigate('/dashboard')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                <Button onClick={() => navigate('/dashboard')} className="bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] hover:from-[#9B1899] hover:to-[#7A1380]">
                   Dashboard
                 </Button>
               )}
@@ -64,17 +64,17 @@ const Index = () => {
       }}>
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-indigo-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#AD1AAC]/20 via-purple-900/20 to-indigo-900/20"></div>
         
         <div className="relative max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-            <Zap className="w-4 h-4 text-blue-400 mr-2" />
+            <Zap className="w-4 h-4 text-[#AD1AAC] mr-2" />
             <span className="text-sm font-medium text-white/90">AI-Powered Chatbot Builder</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Create AI Chatbots
-            <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#AD1AAC] to-purple-400 bg-clip-text text-transparent">
               in Minutes
             </span>
           </h1>
@@ -122,7 +122,7 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card key={index} className="p-8 text-center bg-white/60 backdrop-blur-sm border-white/20 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
@@ -138,7 +138,7 @@ const Index = () => {
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] rounded-lg flex items-center justify-center">
               <MessageSquare className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold">ChatBot Creator</span>

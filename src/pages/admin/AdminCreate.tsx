@@ -380,7 +380,7 @@ const AdminCreate = () => {
                   </Button>
                   
                   {currentStep === 5 ? (
-                    <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                    <Button className="bg-gradient-to-r from-[#AD1AAC] to-[#8B1690] hover:from-[#9B1899] hover:to-[#7A1380]">
                       <Rocket className="w-4 h-4 mr-2" />
                       Deploy Chatbot
                     </Button>
