@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bot, Eye, Edit, Copy, MoreVertical } from 'lucide-react';
-
 interface Chatbot {
   id: number;
   name: string;
@@ -12,13 +11,11 @@ interface Chatbot {
   created: string;
   theme: string;
 }
-
 interface ChatbotCardProps {
   chatbot: Chatbot;
   onView: (id: number) => void;
   onEdit: (id: number) => void;
 }
-
 const getStatusColor = (status: string) => {
   switch (status) {
     case 'Active':
@@ -31,16 +28,16 @@ const getStatusColor = (status: string) => {
       return 'bg-gray-100 text-gray-800';
   }
 };
-
-export const ChatbotCard = ({ chatbot, onView, onEdit }: ChatbotCardProps) => {
-  return (
-    <Card className="hover:shadow-lg transition-shadow flex flex-col h-full">
+export const ChatbotCard = ({
+  chatbot,
+  onView,
+  onEdit
+}: ChatbotCardProps) => {
+  return <Card className="hover:shadow-lg transition-shadow flex flex-col h-full">
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Bot className="w-6 h-6 text-white" />
-            </div>
+            
             <div>
               <CardTitle className="text-lg">{chatbot.name}</CardTitle>
               <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(chatbot.status)}`}>
@@ -70,21 +67,11 @@ export const ChatbotCard = ({ chatbot, onView, onEdit }: ChatbotCardProps) => {
           </div>
         </div>
         <div className="flex items-center space-x-2 mt-auto">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="flex-1"
-            onClick={() => onView(chatbot.id)}
-          >
+          <Button variant="outline" size="sm" className="flex-1" onClick={() => onView(chatbot.id)}>
             <Eye className="w-4 h-4 mr-1" />
             View
           </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="flex-1"
-            onClick={() => onEdit(chatbot.id)}
-          >
+          <Button variant="outline" size="sm" className="flex-1" onClick={() => onEdit(chatbot.id)}>
             <Edit className="w-4 h-4 mr-1" />
             Edit
           </Button>
@@ -93,6 +80,5 @@ export const ChatbotCard = ({ chatbot, onView, onEdit }: ChatbotCardProps) => {
           </Button>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>;
 };
