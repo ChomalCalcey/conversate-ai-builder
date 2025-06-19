@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Sidebar } from '@/components/dashboard/Sidebar';
 import { Header } from '@/components/dashboard/Header';
@@ -319,7 +318,7 @@ const AdminCreate = () => {
         <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         
         <main className="p-6">
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="space-y-6">
             {/* Header */}
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Create New Chatbot</h1>
