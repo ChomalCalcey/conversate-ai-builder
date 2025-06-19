@@ -18,20 +18,6 @@ export const DashboardOverview = () => {
       change: '+18% this month',
       icon: MessageSquare,
       color: 'from-green-600 to-green-700'
-    },
-    {
-      title: 'Active Users',
-      value: '432',
-      change: '+12% this month',
-      icon: Users,
-      color: 'from-purple-600 to-purple-700'
-    },
-    {
-      title: 'Response Rate',
-      value: '98.2%',
-      change: '+0.5% this week',
-      icon: TrendingUp,
-      color: 'from-orange-600 to-orange-700'
     }
   ];
 
@@ -61,20 +47,8 @@ export const DashboardOverview = () => {
 
   return (
     <div className="space-y-6">
-      {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
-        <h2 className="text-3xl font-bold mb-2">Welcome back, John! 👋</h2>
-        <p className="text-blue-100 mb-6">
-          Your chatbots have handled 847 conversations this week. Great work!
-        </p>
-        <Button className="bg-white text-blue-600 hover:bg-blue-50">
-          <Plus className="w-4 h-4 mr-2" />
-          Create New Chatbot
-        </Button>
-      </div>
-
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (

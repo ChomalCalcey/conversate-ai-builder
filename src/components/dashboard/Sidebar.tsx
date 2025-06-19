@@ -1,5 +1,5 @@
 
-import { MessageSquare, LayoutDashboard, Bot, Plus, Settings, HelpCircle, Menu } from 'lucide-react';
+import { MessageSquare, LayoutDashboard, Bot, Plus, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SidebarProps {
@@ -14,8 +14,6 @@ export const Sidebar = ({ activeSection, setActiveSection, isOpen, setIsOpen }: 
     { id: 'overview', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'chatbots', label: 'My Chatbots', icon: Bot },
     { id: 'create', label: 'Create New', icon: Plus },
-    { id: 'settings', label: 'Settings', icon: Settings },
-    { id: 'help', label: 'Help & Support', icon: HelpCircle },
   ];
 
   return (
