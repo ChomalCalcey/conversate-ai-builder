@@ -85,6 +85,14 @@ const AdminDashboard = () => {
         
         <main className="p-6">
           <div className="space-y-6">
+            {/* Header */}
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+                <p className="text-gray-600 mt-1">Overview of your chatbot analytics and performance</p>
+              </div>
+            </div>
+
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {stats.map((stat, index) => {
