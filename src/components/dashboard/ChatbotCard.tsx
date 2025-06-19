@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bot, Eye, Edit, Copy, MoreVertical } from 'lucide-react';
@@ -35,7 +34,7 @@ const getStatusColor = (status: string) => {
 
 export const ChatbotCard = ({ chatbot, onView, onEdit }: ChatbotCardProps) => {
   return (
-    <Card className="hover:shadow-lg transition-shadow">
+    <Card className="hover:shadow-lg transition-shadow flex flex-col h-full">
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-3">
@@ -54,9 +53,9 @@ export const ChatbotCard = ({ chatbot, onView, onEdit }: ChatbotCardProps) => {
           </Button>
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1 flex flex-col">
         <p className="text-gray-600 mb-4">{chatbot.description}</p>
-        <div className="space-y-2 text-sm text-gray-500 mb-4">
+        <div className="space-y-2 text-sm text-gray-500 mb-4 flex-1">
           <div className="flex justify-between">
             <span>Conversations:</span>
             <span className="font-medium">{chatbot.conversations.toLocaleString()}</span>
@@ -70,7 +69,7 @@ export const ChatbotCard = ({ chatbot, onView, onEdit }: ChatbotCardProps) => {
             <span className="font-medium">{chatbot.lastUpdated}</span>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-auto">
           <Button 
             variant="outline" 
             size="sm" 
