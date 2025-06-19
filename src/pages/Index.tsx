@@ -38,14 +38,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+                <MessageSquare className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">
+              <span className="text-2xl font-bold text-gray-900">
                 ChatBot Creator
               </span>
             </div>
@@ -60,12 +60,12 @@ const Index = () => {
                   <Button variant="ghost" onClick={() => navigate('/login')} className="font-medium">
                     Sign In
                   </Button>
-                  <Button onClick={() => navigate('/signup')} className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium px-6">
+                  <Button onClick={() => navigate('/signup')} className="bg-black hover:bg-gray-800 text-white font-medium px-6">
                     Get Started
                   </Button>
                 </>
               ) : (
-                <Button onClick={() => navigate('/dashboard')} className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium px-6">
+                <Button onClick={() => navigate('/dashboard')} className="bg-black hover:bg-gray-800 text-white font-medium px-6">
                   Dashboard
                 </Button>
               )}
@@ -75,41 +75,20 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-32 px-4 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-blue-900/70 to-indigo-900/80" />
-        
-        <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-8">
-            <Zap className="w-4 h-4 text-white mr-2" />
-            <span className="text-sm font-medium text-white">Powered by Advanced AI</span>
+      <section className="py-24 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center px-4 py-2 bg-gray-50 rounded-full border mb-8">
+            <Zap className="w-4 h-4 text-gray-600 mr-2" />
+            <span className="text-sm font-medium text-gray-700">Powered by Advanced AI</span>
           </div>
           
-          <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-            The #1 AI agent
+          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
+            Build intelligent
             <br />
-            <span className="text-blue-200">for customer service</span>
+            <span className="text-gray-600">chatbots in minutes</span>
           </h1>
           
-          <div className="flex items-center justify-center space-x-8 mb-8 text-sm text-blue-200">
-            <div className="text-center">
-              <div className="font-bold">#1 IN PERFORMANCE BENCHMARKS</div>
-            </div>
-            <div className="text-center">
-              <div className="font-bold">#1 IN COMPETITIVE BAKE-OFFS</div>
-            </div>
-            <div className="text-center">
-              <div className="font-bold">#1 RANKING ON G2</div>
-            </div>
-          </div>
-          
-          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Create AI-powered chatbots that understand your business, engage your customers, 
             and scale your support operations without the complexity.
           </p>
@@ -118,29 +97,35 @@ const Index = () => {
             <Button 
               size="lg" 
               onClick={handleGetStarted}
-              className="bg-white hover:bg-gray-100 text-gray-900 text-lg px-8 py-4 h-14 font-medium"
+              className="bg-black hover:bg-gray-800 text-white text-lg px-8 py-4 h-14 font-medium"
             >
-              Start free trial
+              Start Building Free
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-14 font-medium border-white/30 text-white hover:bg-white/10">
-              View demo
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-14 font-medium border-gray-300">
+              View Demo
             </Button>
           </div>
           
-          {/* Trust Logos */}
-          <div className="flex items-center justify-center space-x-12 opacity-60">
-            <div className="text-white font-semibold">Anthropic</div>
-            <div className="text-white font-semibold">Monday.com</div>
-            <div className="text-white font-semibold">Amplitude</div>
-            <div className="text-white font-semibold">Synthesia</div>
-            <div className="text-white font-semibold">LaunchDarkly</div>
-            <div className="text-white font-semibold">Coda</div>
+          <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
+            <div className="flex items-center">
+              <Check className="w-4 h-4 text-green-500 mr-2" />
+              No credit card required
+            </div>
+            <div className="flex items-center">
+              <Check className="w-4 h-4 text-green-500 mr-2" />
+              Free forever plan
+            </div>
+            <div className="flex items-center">
+              <Check className="w-4 h-4 text-green-500 mr-2" />
+              Deploy instantly
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 px-4 bg-white">
+      <section id="features" className="py-24 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
@@ -154,7 +139,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-12">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mx-auto mb-8">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
@@ -166,23 +151,23 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 px-4 bg-gray-50">
+      <section className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 text-center">
             <div>
-              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">10k+</div>
+              <div className="text-5xl font-bold text-gray-900 mb-2">10k+</div>
               <div className="text-gray-600 font-medium">Active Users</div>
             </div>
             <div>
-              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">99.9%</div>
+              <div className="text-5xl font-bold text-gray-900 mb-2">99.9%</div>
               <div className="text-gray-600 font-medium">Uptime</div>
             </div>
             <div>
-              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">50M+</div>
+              <div className="text-5xl font-bold text-gray-900 mb-2">50M+</div>
               <div className="text-gray-600 font-medium">Messages Processed</div>
             </div>
             <div>
-              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">24/7</div>
+              <div className="text-5xl font-bold text-gray-900 mb-2">24/7</div>
               <div className="text-gray-600 font-medium">Support</div>
             </div>
           </div>
@@ -190,18 +175,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+      <section className="py-24 px-4 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tight">
             Ready to get started?
           </h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Join thousands of teams already using our platform to transform their customer experience
           </p>
           <Button 
             size="lg" 
             onClick={handleGetStarted}
-            className="bg-white hover:bg-gray-100 text-gray-900 text-lg px-8 py-4 h-14 font-medium"
+            className="bg-white hover:bg-gray-100 text-black text-lg px-8 py-4 h-14 font-medium"
           >
             Start Your Free Trial
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -215,7 +200,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                   <MessageSquare className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold text-gray-900">ChatBot Creator</span>
