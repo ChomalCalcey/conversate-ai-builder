@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -89,7 +88,7 @@ export const ChatbotList = () => {
   };
 
   const handleCreateChatbot = () => {
-    navigate('/dashboard/create');
+    navigate('/admin/create');
   };
 
   return (
