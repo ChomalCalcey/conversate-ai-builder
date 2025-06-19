@@ -27,20 +27,6 @@ const Index = () => {
     }
   ];
 
-  const steps = [
-    { number: "01", title: "Upload Knowledge", description: "Add your content and data" },
-    { number: "02", title: "Customize", description: "Design and configure" },
-    { number: "03", title: "Deploy", description: "Embed on your website" }
-  ];
-
-  const handleGetStarted = () => {
-    if (isLoggedIn) {
-      navigate('/dashboard');
-    } else {
-      navigate('/login');
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Navigation */}
@@ -61,9 +47,6 @@ const Index = () => {
                   <Button variant="ghost" onClick={() => navigate('/login')}>
                     Sign In
                   </Button>
-                  <Button onClick={() => navigate('/signup')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    Get Started
-                  </Button>
                 </>
               ) : (
                 <Button onClick={() => navigate('/dashboard')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
@@ -75,51 +58,48 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-full blur-3xl transform -rotate-12 scale-150"></div>
+      {/* Hero Section with Starry Background */}
+      <section className="relative py-20 px-4 text-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=3880&auto=format&fit=crop&ixlib=rb-4.0.3')`
+      }}>
+        {/* Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-indigo-900/20"></div>
+        
         <div className="relative max-w-4xl mx-auto">
-          <div className="inline-flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-white/20 mb-8">
-            <Zap className="w-4 h-4 text-blue-600 mr-2" />
-            <span className="text-sm font-medium text-gray-700">AI-Powered Chatbot Builder</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+            <Zap className="w-4 h-4 text-blue-400 mr-2" />
+            <span className="text-sm font-medium text-white/90">AI-Powered Chatbot Builder</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Create AI Chatbots
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               in Minutes
             </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
             Build intelligent chatbots for your website without coding. Upload your knowledge, customize the design, and deploy instantly.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              onClick={handleGetStarted}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Start Building Free
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-xl border-2 hover:bg-white/80">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-xl border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
               Watch Demo
             </Button>
           </div>
           
-          <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-500">
+          <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-white/70">
             <div className="flex items-center">
-              <Check className="w-4 h-4 text-green-500 mr-2" />
+              <Check className="w-4 h-4 text-green-400 mr-2" />
               No credit card required
             </div>
             <div className="flex items-center">
-              <Check className="w-4 h-4 text-green-500 mr-2" />
+              <Check className="w-4 h-4 text-green-400 mr-2" />
               Free forever plan
             </div>
             <div className="flex items-center">
-              <Check className="w-4 h-4 text-green-500 mr-2" />
+              <Check className="w-4 h-4 text-green-400 mr-2" />
               Deploy in seconds
             </div>
           </div>
@@ -151,55 +131,6 @@ const Index = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 px-4 bg-white/40 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              How it works
-            </h2>
-            <p className="text-xl text-gray-600">
-              Three simple steps to your custom chatbot
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
-                  {step.number}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-                {index < steps.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute top-10 -right-4 w-8 h-8 text-gray-300" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to create your first chatbot?
-          </h2>
-          <p className="text-xl text-gray-600 mb-10">
-            Join thousands of businesses using AI chatbots to improve customer experience
-          </p>
-          <Button 
-            size="lg" 
-            onClick={handleGetStarted}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-12 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Get Started Now
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
         </div>
       </section>
 
