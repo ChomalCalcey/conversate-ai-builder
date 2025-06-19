@@ -29,8 +29,8 @@ const App = () => (
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/my-chatbots" element={<AdminChatbots />} />
           <Route path="/admin/create" element={<AdminCreate />} />
-          <Route path="/dashboard/chatbots/:id/view" element={<ChatbotView />} />
-          <Route path="/dashboard/chatbots/:id/edit" element={<ChatbotEdit />} />
+          <Route path="/admin/dashboard/chatbots/:id/view" element={<ChatbotView />} />
+          <Route path="/admin/dashboard/chatbots/:id/edit" element={<ChatbotEdit />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

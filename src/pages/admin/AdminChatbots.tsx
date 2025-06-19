@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '@/components/dashboard/Sidebar';
@@ -84,11 +83,11 @@ const AdminChatbots = () => {
   );
 
   const handleViewChatbot = (chatbotId: number) => {
-    navigate(`/dashboard/chatbots/${chatbotId}/view`);
+    navigate(`/admin/dashboard/chatbots/${chatbotId}/view`);
   };
 
   const handleEditChatbot = (chatbotId: number) => {
-    navigate(`/dashboard/chatbots/${chatbotId}/edit`);
+    navigate(`/admin/dashboard/chatbots/${chatbotId}/edit`);
   };
 
   const handleCreateChatbot = () => {

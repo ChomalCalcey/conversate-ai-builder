@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -42,7 +41,7 @@ const ChatbotEdit = () => {
   const handleSave = () => {
     // In real app, this would make an API call
     console.log('Saving chatbot:', formData);
-    navigate(`/dashboard/chatbots/${id}/view`);
+    navigate(`/admin/dashboard/chatbots/${id}/view`);
   };
 
   const handleFileUpload = () => {
@@ -65,7 +64,7 @@ const ChatbotEdit = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => navigate(`/dashboard/chatbots/${id}/view`)}
+                onClick={() => navigate(`/admin/dashboard/chatbots/${id}/view`)}
                 className="flex items-center"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />

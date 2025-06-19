@@ -53,7 +53,7 @@ const ChatbotView = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => navigate('/dashboard')}
+                onClick={() => navigate('/admin/dashboard')}
                 className="flex items-center"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -72,7 +72,7 @@ const ChatbotView = () => {
               </div>
             </div>
             <Button
-              onClick={() => navigate(`/dashboard/chatbots/${id}/edit`)}
+              onClick={() => navigate(`/admin/dashboard/chatbots/${id}/edit`)}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
             >
               <Edit className="w-4 h-4 mr-2" />
