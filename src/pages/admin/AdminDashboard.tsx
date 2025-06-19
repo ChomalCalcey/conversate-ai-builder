@@ -82,9 +82,7 @@ const AdminDashboard = () => {
                         <CardTitle className="text-sm font-medium text-gray-600">
                           {stat.title}
                         </CardTitle>
-                        <div className={`w-10 h-10 bg-gradient-to-r ${stat.color} rounded-lg flex items-center justify-center`}>
-                          <Icon className="w-5 h-5 text-white" />
-                        </div>
+                        
                       </div>
                     </CardHeader>
                     <CardContent>
@@ -109,9 +107,7 @@ const AdminDashboard = () => {
                 <div className="space-y-4">
                   {allChatbots.map(chatbot => <div key={chatbot.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                          <Bot className="w-6 h-6 text-white" />
-                        </div>
+                        
                         <div>
                           <h3 className="font-semibold text-gray-900">{chatbot.name}</h3>
                           <div className="flex items-center space-x-4 text-sm text-gray-500">
