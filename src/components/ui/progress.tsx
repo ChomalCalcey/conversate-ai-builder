@@ -1,6 +1,6 @@
 
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/tailwind.utils";
 
 interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {
   value?: number;
