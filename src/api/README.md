@@ -79,17 +79,9 @@ export default useUserProfileQuery;
 
 ```typescript
 // src/api/hooks/query-client-key.constants.ts
-export const QueryClientKeys = {
-  Chatbot: {
-    List: 'chatbotList',
-    Detail: 'chatbotDetail',
-    Create: 'chatbotCreate',
-    Update: 'chatbotUpdate',
-    Delete: 'chatbotDelete'
-  },
-  User: {
-    Profile: 'userProfile',
-    Settings: 'userSettings'
+export const QUERY_CLIENT_KEYS = {
+  USER: {
+    PROFILE: 'USER_PROFILE',
   }
 };
 ```

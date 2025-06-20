@@ -1,6 +1,6 @@
 
 export const QUERY_CLIENT_KEYS = {
   CHATBOT : {
-    LIST : 'chatbotList'
+    LIST : 'CHATBOT_LIST'
   }
 }
